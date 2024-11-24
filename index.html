@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Your Solar Irradiance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+            width: 200px; /* Set fixed width for labels */
+            text-align: right; /* Align the text to the right */
+            margin-right: 10px; /* Add some space between label and input */
+        }
+        input[type="text"] {
+            width: 80%; /* Adjust input field width */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 40%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What is Solar Irradiance?</h1>
+        <p>
+            Solar irradiance is the power per unit area produced by the Sun in the form of electromagnetic radiation. It is a critical measurement for understanding the amount of solar energy reaching the Earth’s surface, which is essential for various applications such as solar power generation, climate studies, and weather forecasting.
+        </p>
+        <p>
+            Understanding solar irradiance helps in predicting and optimizing the efficiency of solar panels and renewable energy systems. Factors like time of day, geographical location, atmospheric conditions, and seasons influence solar irradiance levels. Accurately predicting these variations can help maximize the performance of solar energy systems and contribute to a sustainable energy future.
+        </p>
+        <p>
+            On this platform, you can enter key environmental parameters, and our advanced machine learning model will predict the expected solar irradiance, aiding in better planning and decision-making for solar energy projects.
+        </p>
+    </div>
+    <img src="https://www.thebusinessguardians.com/wp-content/uploads/2021/04/New-Project-29-3.jpg" alt="Solar Irradiance" style="display: block; margin: 0 auto;" width="800" height="500">
+
+
+    <h1>Enter Solar Prediction Parameters</h1>
+    <form action="/predict" method="POST">
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="UNIXTime">UNIX Time:</label>
+            <input type="text" name="UNIXTime" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="Data">Date (yyyy-mm-dd):</label>
+            <input type="text" name="Data" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="Time">Time (hh:mm:ss):</label>
+            <input type="text" name="Time" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="Temperature">Temperature:</label>
+            <input type="text" name="Temperature" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="Pressure">Pressure:</label>
+            <input type="text" name="Pressure" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="Humidity">Humidity:</label>
+            <input type="text" name="Humidity" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="WindDirection">Wind Direction (Degrees):</label>
+            <input type="text" name="WindDirection" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="Speed">Wind Speed:</label>
+            <input type="text" name="Speed" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="TimeSunRise">Time of Sunrise (hh:mm:ss):</label>
+            <input type="text" name="TimeSunRise" required>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+            <label for="TimeSunSet">Time of Sunset (hh:mm:ss):</label>
+            <input type="text" name="TimeSunSet" required>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
